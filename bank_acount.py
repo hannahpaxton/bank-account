@@ -27,3 +27,30 @@
 #   >>> "Invalid transaction: not enough funds to withdraw $50." 
 # account_2.balance
 #   >>> 40    # still 40 since the previous transaction was not successful
+
+class BankAccount:
+
+    def __init__(self, amount = 0):
+        self.balance = amount
+    
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance = self.balance - amount
+            print(self.balance)
+        else:
+            print(f'Invalid transaction: not enough funds to withdraw ${amount}.')
+        
+    def deposit(self, amount): 
+        self.balance = self.balance + amount
+        print(self.balance)
+
+account_1 = BankAccount()
+account_2 = BankAccount()
+account_3 = BankAccount(100)
+
+
+
+
+
+
+    
